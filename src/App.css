@@ -28,6 +28,15 @@
   color: #61dafb;
 }
 
+.square {
+  width: 100px;
+  height: 100px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
