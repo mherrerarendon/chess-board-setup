@@ -12,7 +12,7 @@ const Board = () => {
         } else {
             color = i % 2 === 1 ? 'black' : 'white';
         }
-        items.push(<Square color={color} id={{ i }} />)
+        items.push(<Square color={color} square-id={i} />)
     }
     return (
         <div className='board'>

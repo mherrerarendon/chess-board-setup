@@ -2,11 +2,11 @@
 
 import React from 'react'
 
-const Square = ({ color, id }) => {
+const Square = ({ color, square }) => {
     return (
         <div
             style={{ backgroundColor: color }}
-            id={{ id }}
+            square-id={{ square }}
             className='square' />
     )
 }
