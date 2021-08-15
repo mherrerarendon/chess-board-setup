@@ -8,9 +8,9 @@ const Board = () => {
         let color = 'white';
         const row = Math.floor(i / 8);
         if (row % 2 === 0) {
-            color = i % 2 === 1 ? 'white' : 'black';
-        } else {
             color = i % 2 === 1 ? 'black' : 'white';
+        } else {
+            color = i % 2 === 1 ? 'white' : 'black';
         }
         items.push(<Square color={color} square-id={i} />)
     }

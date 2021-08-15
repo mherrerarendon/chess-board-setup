@@ -22,4 +22,6 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     # Runs a single command using the runners shell
     - name: Do deploy
-      run: npm run deploy
+      run: |
+        npm install
+        npm run deploy
