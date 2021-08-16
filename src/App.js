@@ -5,15 +5,20 @@ import PieceSelection from './components/PieceSelection';
 
 function App() {
   const [white, set_white] = useState(true)
+  const [selected_piece, set_piece] = useState(0)
 
   const toggleColor = () => {
     console.log('toggling color')
     set_white(!white)
   }
+
+  const onPieceSelected = (piece_id) => {
+    console.log('selected ', piece_id)
+  }
   return (
     <div className="App">
       <Board />
-      <PieceSelection white={white} onToggleColor={toggleColor} />
+      <PieceSelection white={white} onToggleColor={toggleColor} onPieceSelected={onPieceSelected} />
     </div>
   );
 }
