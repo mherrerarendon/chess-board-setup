@@ -14,11 +14,17 @@ function App() {
 
   const onPieceSelected = (piece_id) => {
     console.log('selected ', piece_id)
+    set_piece(piece_id)
   }
   return (
     <div className="App">
       <Board />
-      <PieceSelection white={white} onToggleColor={toggleColor} onPieceSelected={onPieceSelected} />
+      <PieceSelection 
+        white={white} 
+        selected_piece={selected_piece}
+        onToggleColor={toggleColor} 
+        onPieceSelected={onPieceSelected}
+      />
     </div>
   );
 }

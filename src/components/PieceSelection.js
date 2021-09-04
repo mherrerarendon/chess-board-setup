@@ -1,16 +1,16 @@
 import React from 'react'
 import PieceButton from './PieceButton'
 
-const PieceSelection = ({ white, onToggleColor, onPieceSelected }) => {
+const PieceSelection = ({ white, selected_piece, onToggleColor, onPieceSelected }) => {
     return (
-        <div class="piece-selector" onChange={onPieceSelected}>
+        <div className="piece-selector">
             <button type="button" onClick={onToggleColor}>Toggle Color</button >
-            <PieceButton piece_id={0} white={white} />
-            <PieceButton piece_id={1} white={white} />
-            <PieceButton piece_id={2} white={white} />
-            <PieceButton piece_id={3} white={white} />
-            <PieceButton piece_id={4} white={white} />
-            <PieceButton piece_id={5} white={white} />
+            <PieceButton piece_id={0} white={white} onPieceSelected={onPieceSelected} selected_piece={selected_piece}/>
+            <PieceButton piece_id={1} white={white} onPieceSelected={onPieceSelected} selected_piece={selected_piece}/>
+            <PieceButton piece_id={2} white={white} onPieceSelected={onPieceSelected} selected_piece={selected_piece}/>
+            <PieceButton piece_id={3} white={white} onPieceSelected={onPieceSelected} selected_piece={selected_piece}/>
+            <PieceButton piece_id={4} white={white} onPieceSelected={onPieceSelected} selected_piece={selected_piece}/>
+            <PieceButton piece_id={5} white={white} onPieceSelected={onPieceSelected} selected_piece={selected_piece}/>
         </div>
     )
 }
