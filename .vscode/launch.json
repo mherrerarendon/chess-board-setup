@@ -2,7 +2,7 @@
     "configurations": [
         {
             "type": "pwa-chrome",
-            "name": "http://localhost:3000/chess-board-setup",
+            "name": "chess board setup",
             "request": "launch",
             "url": "http://localhost:3000/chess-board-setup"
         }
