@@ -14,23 +14,22 @@ function App() {
   }
   
   const add_piece = (square_id) => {
+    const piece_char = selected_piece === "_" ? " " : selected_piece;
     var temp_state = board_state.slice()
-    temp_state[square_id] = selected_piece
+    temp_state[square_id] = piece_char
     set_board_state(temp_state)
   }
 
   return (
     <div className="App">
-      <div className="main-container">
-        <Board
-          board_state={board_state}
-          add_piece={add_piece}
-        />
-        <PieceSelection 
-          selected_piece={selected_piece}
-          handleChange={handleChange}
-        />
-      </div>
+      <Board
+        board_state={board_state}
+        add_piece={add_piece}
+      />
+      <PieceSelection 
+        selected_piece={selected_piece}
+        handleChange={handleChange}
+      />
     </div>
   );
 }

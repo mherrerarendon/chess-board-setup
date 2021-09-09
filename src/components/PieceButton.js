@@ -2,9 +2,8 @@ import React from 'react'
 
 const PieceButton = ({ piece_id, handleChange, selected_id }) => {
     return (
-        <div className="piece-radio2">
+        <div className="piece-radio">
             <input
-                className="piece-radio"
                 type="radio" 
                 id={piece_id}
                 name="piece" 
