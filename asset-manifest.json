@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/chess-board-setup/static/css/main.b47e5969.chunk.css",
-    "main.js": "/chess-board-setup/static/js/main.9a6d45cf.chunk.js",
-    "main.js.map": "/chess-board-setup/static/js/main.9a6d45cf.chunk.js.map",
+    "main.css": "/chess-board-setup/static/css/main.1612d1b1.chunk.css",
+    "main.js": "/chess-board-setup/static/js/main.922ab193.chunk.js",
+    "main.js.map": "/chess-board-setup/static/js/main.922ab193.chunk.js.map",
     "runtime-main.js": "/chess-board-setup/static/js/runtime-main.a3823e94.js",
     "runtime-main.js.map": "/chess-board-setup/static/js/runtime-main.a3823e94.js.map",
-    "static/js/2.2b36cce9.chunk.js": "/chess-board-setup/static/js/2.2b36cce9.chunk.js",
-    "static/js/2.2b36cce9.chunk.js.map": "/chess-board-setup/static/js/2.2b36cce9.chunk.js.map",
+    "static/js/2.918ab840.chunk.js": "/chess-board-setup/static/js/2.918ab840.chunk.js",
+    "static/js/2.918ab840.chunk.js.map": "/chess-board-setup/static/js/2.918ab840.chunk.js.map",
     "static/js/3.014560e6.chunk.js": "/chess-board-setup/static/js/3.014560e6.chunk.js",
     "static/js/3.014560e6.chunk.js.map": "/chess-board-setup/static/js/3.014560e6.chunk.js.map",
     "index.html": "/chess-board-setup/index.html",
-    "static/css/main.b47e5969.chunk.css.map": "/chess-board-setup/static/css/main.b47e5969.chunk.css.map",
-    "static/js/2.2b36cce9.chunk.js.LICENSE.txt": "/chess-board-setup/static/js/2.2b36cce9.chunk.js.LICENSE.txt"
+    "static/css/main.1612d1b1.chunk.css.map": "/chess-board-setup/static/css/main.1612d1b1.chunk.css.map",
+    "static/js/2.918ab840.chunk.js.LICENSE.txt": "/chess-board-setup/static/js/2.918ab840.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.a3823e94.js",
-    "static/js/2.2b36cce9.chunk.js",
-    "static/css/main.b47e5969.chunk.css",
-    "static/js/main.9a6d45cf.chunk.js"
+    "static/js/2.918ab840.chunk.js",
+    "static/css/main.1612d1b1.chunk.css",
+    "static/js/main.922ab193.chunk.js"
   ]
 }
