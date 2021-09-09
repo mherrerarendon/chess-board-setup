@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './App.css';
+import './App.scss';
 import Board from './components/Board';
 import PieceSelection from './components/PieceSelection';
 
@@ -21,14 +21,16 @@ function App() {
 
   return (
     <div className="App">
-      <Board
-        board_state={board_state}
-        add_piece={add_piece}
-      />
-      <PieceSelection 
-        selected_piece={selected_piece}
-        handleChange={handleChange}
-      />
+      <div className="main-container">
+        <Board
+          board_state={board_state}
+          add_piece={add_piece}
+        />
+        <PieceSelection 
+          selected_piece={selected_piece}
+          handleChange={handleChange}
+        />
+      </div>
     </div>
   );
 }

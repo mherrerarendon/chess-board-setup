@@ -2,7 +2,7 @@ import React from 'react'
 
 const PieceButton = ({ piece_id, handleChange, selected_id }) => {
     return (
-        <>
+        <div className="piece-radio2">
             <input
                 className="piece-radio"
                 type="radio" 
@@ -12,9 +12,8 @@ const PieceButton = ({ piece_id, handleChange, selected_id }) => {
                 value={piece_id}
                 checked={selected_id === piece_id}
             />
-            <label htmlFor={piece_id}>{piece_id}</label>
-            {/* <br /> */}
-        </>
+            <label className="piece-label" htmlFor={piece_id}>{piece_id}</label>
+        </div>
     )
 }
 
