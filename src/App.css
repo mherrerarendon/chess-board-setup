@@ -1,64 +1,36 @@
-.App {
-  text-align: center;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-column-gap: 10px;
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.white-square {
+  background-color: rgb(248, 241, 241);
+  font-size: 26pt;
+  align-content: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.dark-square {
+  background-color: brown;
+  font-size: 26pt;
+  align-content: center;
+  justify-content: center;
 }
 
 .board {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  width: 800px;
-  height: 800px;
-  padding: 2x;
-  border: 1px solid;
-}
-.piece-selector input{
-  margin:0;padding:0;
-  -webkit-appearance:none;
-     -moz-appearance:none;
-          appearance:none;
+  border: 1px solid black;
+  width: 40vw;
+  height: 40vw;
+  position: relative;
+  margin: auto;
+  margin-top: 20px;
 }
 
-.piece-selector input:active +.piece_button_class{opacity: .9;}
-.piece-selector input:checked +.piece_button_class{
-  -webkit-filter: none;
-     -moz-filter: none;
-          filter: none;
+.piece-selection-container {
+  margin: auto;
+  margin-top: 20px;
+  width: 40vw;
 }
-.piece_button_class{
-  padding: 2x;
-  border: 1px solid;
-  font-size: 40px;
-  cursor:pointer;
-  background-size:contain;
-  background-repeat:no-repeat;
-  display:inline-block;
-  width:100px;height:70px;
-  -webkit-transition: all 100ms ease-in;
-     -moz-transition: all 100ms ease-in;
-          transition: all 100ms ease-in;
-  -webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
-     -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
-          filter: brightness(1.8) grayscale(1) opacity(.7);
-}
-.piece_button_class:hover{
-  -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
-     -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
-          filter: brightness(1.2) grayscale(.5) opacity(.9);
-}
+
+/* .piece-radio {
+  float:left;
+} */
+

@@ -4,6 +4,7 @@ const PieceButton = ({ piece_id, handleChange, selected_id }) => {
     return (
         <>
             <input
+                className="piece-radio"
                 type="radio" 
                 id={piece_id}
                 name="piece" 
@@ -12,7 +13,7 @@ const PieceButton = ({ piece_id, handleChange, selected_id }) => {
                 checked={selected_id === piece_id}
             />
             <label htmlFor={piece_id}>{piece_id}</label>
-            <br />
+            {/* <br /> */}
         </>
     )
 }

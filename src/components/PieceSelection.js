@@ -12,7 +12,7 @@ const PieceSelection = ({ selected_piece, handleChange }) => {
                 />
     })
     return (
-        <div>
+        <div className="piece-selection-container">
             {piece_components}
         </div>
     )

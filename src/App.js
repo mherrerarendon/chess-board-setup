@@ -10,16 +10,13 @@ function App() {
   const [board_state, set_board_state] = useState(initial_board_values)
 
   const handleChange = (e) => {
-    console.log('selected ', e.target.value)
     set_piece(e.target.value)
   }
   
   const add_piece = (square_id) => {
-    console.log('Adding {piece} to {square_id}')
     var temp_state = board_state.slice()
     temp_state[square_id] = selected_piece
     set_board_state(temp_state)
-    // set_board_state([board_state, board_state[square_id] = selected_piece])
   }
 
   return (
