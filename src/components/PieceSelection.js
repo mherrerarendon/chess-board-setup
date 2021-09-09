@@ -8,6 +8,7 @@ const PieceSelection = ({ selected_piece, handleChange }) => {
                     piece_id={piece_char}
                     handleChange={handleChange}
                     selected_id={selected_piece}
+                    key={piece_char}
                 />
     })
     return (
