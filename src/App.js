@@ -42,27 +42,33 @@ function App() {
           <label htmlFor="starting-color">White to start</label>
         </div>
         <div className="castling-rights-container">
-          <h1>White Castling Rights</h1>
+          <h2>White Castling Rights</h2>
           <div>
             <ToggleSwitch id="white-king-castle-rights" checked={checked} onChange={checked => setChecked(checked)} />
             <label htmlFor="white-king-castle-rights">King side</label>
           </div>
+          <br />
           <div>
             <ToggleSwitch id="white-queen-castle-rights" checked={checked} onChange={checked => setChecked(checked)} />
             <label htmlFor="white-queen-castle-rights">Queen side</label>
           </div>
         </div>
         <div className="castling-rights-container">
-          <h1>Black Castling Rights</h1>
+          <h2>Black Castling Rights</h2>
           <div>
             <ToggleSwitch id="black-king-castle-rights" checked={checked} onChange={checked => setChecked(checked)} />
             <label htmlFor="black-king-castle-rights">King side</label>
           </div>
+          <br />
           <div>
             <ToggleSwitch id="white-queen-castle-rights" checked={checked} onChange={checked => setChecked(checked)} />
             <label htmlFor="white-king-queen-rights">Queen side</label>
           </div>
         </div>
+        <button>test</button>
+      </div>
+      <div className="fen-container">
+
       </div>
     </div>
   );
