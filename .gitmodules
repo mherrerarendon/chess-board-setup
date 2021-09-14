@@ -1,0 +1,3 @@
+[submodule "src/components/lib/ToggleSwitch"]
+	path = src/components/lib/ToggleSwitch
+	url = git@github-mh:sitepoint-editors/ToggleSwitch.git
