@@ -2,7 +2,8 @@ import { useState } from 'react'
 import './App.scss';
 import Board from './components/Board';
 import PieceSelection from './components/PieceSelection';
-import Toggle from './components/Toggle';
+import ToggleSwitch from './components/lib/ToggleSwitch/ToggleSwitch'
+// import Toggle from './components/Toggle';
 
 function App() {
   const [selected_piece, set_piece] = useState("")
@@ -21,6 +22,8 @@ function App() {
     set_board_state(temp_state)
   }
 
+  const [checked, setChecked] = useState(true);
+
   return (
     <div className="App">
       <div className="main-container">
@@ -34,7 +37,32 @@ function App() {
         />
       </div>
       <div className="options-container">
-        <Toggle></Toggle>
+        <div>
+          <ToggleSwitch id="starting-color" checked={checked} onChange={checked => setChecked(checked)} />
+          <label htmlFor="starting-color">White to start</label>
+        </div>
+        <div className="castling-rights-container">
+          <h1>White Castling Rights</h1>
+          <div>
+            <ToggleSwitch id="white-king-castle-rights" checked={checked} onChange={checked => setChecked(checked)} />
+            <label htmlFor="white-king-castle-rights">King side</label>
+          </div>
+          <div>
+            <ToggleSwitch id="white-queen-castle-rights" checked={checked} onChange={checked => setChecked(checked)} />
+            <label htmlFor="white-queen-castle-rights">Queen side</label>
+          </div>
+        </div>
+        <div className="castling-rights-container">
+          <h1>Black Castling Rights</h1>
+          <div>
+            <ToggleSwitch id="black-king-castle-rights" checked={checked} onChange={checked => setChecked(checked)} />
+            <label htmlFor="black-king-castle-rights">King side</label>
+          </div>
+          <div>
+            <ToggleSwitch id="white-queen-castle-rights" checked={checked} onChange={checked => setChecked(checked)} />
+            <label htmlFor="white-king-queen-rights">Queen side</label>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -1,13 +1,14 @@
 import React from 'react'
 
-const Toggle = () => {
-    return (
-        <label class="switch">
-            <input type="checkbox"/>
-            <span class="slider round"></span>
-            test
-        </label> 
-    )
-}
+const Toggle = ({checked, onChange}) => (
+    <div>
+      <input
+        type="checkbox"
+        className="toggle-switch-checkbox"
+        checked={checked}
+        onChange={e => onChange(e.target.checked)}
+      />
+    </div>
+  );
 
 export default Toggle
