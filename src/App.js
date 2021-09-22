@@ -3,13 +3,18 @@ import './App.scss';
 import Board from './components/Board';
 import PieceSelection from './components/PieceSelection';
 import ToggleSwitch from './components/lib/ToggleSwitch/ToggleSwitch'
-// import Toggle from './components/Toggle';
 
 function App() {
+  import('fen').then(module => {
+    console.log(module)
+  })
   const [selected_piece, set_piece] = useState("")
 
   const initial_board_values = Array(64).fill(" ");
   const [board_state, set_board_state] = useState(initial_board_values)
+
+  const [white_to_start, set_white_to_start] = useState(true)
+  const [castling_rights, set_castling_rights] = useState(Array(4).fill(true))
 
   const handleChange = (e) => {
     set_piece(e.target.value)
@@ -22,7 +27,24 @@ function App() {
     set_board_state(temp_state)
   }
 
-  const [checked, setChecked] = useState(true);
+  // const [checked, setChecked] = useState(true);
+  const on_toggle_castle_rights = (castle_id, checked) => {
+    var temp_state = castling_rights.slice()
+    temp_state[castle_id] = checked
+    set_castling_rights(temp_state)
+  }
+
+  const on_get_fen = () => {
+    const editor = {
+      white_to_start: true,
+      white_king_side_castle: true,
+      white_queen_side_castle: true,
+      black_king_side_castle: true,
+      black_queen_side_castle: true,
+      squares: Array(64).fill(' ')
+    }
+    wasm.get_fen_wasm(JSON.stringify(editor))
+  }
 
   return (
     <div className="App">
@@ -38,25 +60,25 @@ function App() {
       </div>
       <div className="options-container">
         <div>
-          <ToggleSwitch id="starting-color" checked={checked} onChange={checked => setChecked(checked)} />
+          <ToggleSwitch id="starting-color" checked={checked} onChange={checked => on_toggle_castle_rights(checked)} />
           <label htmlFor="starting-color">White to start</label>
         </div>
         <div className="castling-rights-container">
           <h2>White Castling Rights</h2>
           <div>
-            <ToggleSwitch id="white-king-castle-rights" checked={checked} onChange={checked => setChecked(checked)} />
+            <ToggleSwitch id="white-king-castle-rights" checked={checked} onChange={checked => on_toggle_castle_rights(checked)} />
             <label htmlFor="white-king-castle-rights">King side</label>
           </div>
           <br />
           <div>
-            <ToggleSwitch id="white-queen-castle-rights" checked={checked} onChange={checked => setChecked(checked)} />
+            <ToggleSwitch id="white-queen-castle-rights" checked={checked} onChange={checked => on_toggle_castle_rights(checked)} />
             <label htmlFor="white-queen-castle-rights">Queen side</label>
           </div>
         </div>
         <div className="castling-rights-container">
           <h2>Black Castling Rights</h2>
           <div>
-            <ToggleSwitch id="black-king-castle-rights" checked={checked} onChange={checked => setChecked(checked)} />
+            <ToggleSwitch id="black-king-castle-rights" checked={checked} onChange={checked => on_toggle_castle_rights(checked)} />
             <label htmlFor="black-king-castle-rights">King side</label>
           </div>
           <br />
@@ -65,7 +87,7 @@ function App() {
             <label htmlFor="white-king-queen-rights">Queen side</label>
           </div>
         </div>
-        <button>test</button>
+        <button onClick={on_get_fen}>test</button>
       </div>
       <div className="fen-container">
 
