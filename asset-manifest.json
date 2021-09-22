@@ -1,22 +1,25 @@
 {
   "files": {
     "main.css": "/chess-board-setup/static/css/main.ca96e840.chunk.css",
-    "main.js": "/chess-board-setup/static/js/main.d0abd7e4.chunk.js",
-    "main.js.map": "/chess-board-setup/static/js/main.d0abd7e4.chunk.js.map",
-    "runtime-main.js": "/chess-board-setup/static/js/runtime-main.f291bc4a.js",
-    "runtime-main.js.map": "/chess-board-setup/static/js/runtime-main.f291bc4a.js.map",
-    "static/js/2.a90919f1.chunk.js": "/chess-board-setup/static/js/2.a90919f1.chunk.js",
-    "static/js/2.a90919f1.chunk.js.map": "/chess-board-setup/static/js/2.a90919f1.chunk.js.map",
-    "static/js/3.9cd980e8.chunk.js": "/chess-board-setup/static/js/3.9cd980e8.chunk.js",
-    "static/js/3.9cd980e8.chunk.js.map": "/chess-board-setup/static/js/3.9cd980e8.chunk.js.map",
+    "main.js": "/chess-board-setup/static/js/main.338a5ec2.chunk.js",
+    "main.js.map": "/chess-board-setup/static/js/main.338a5ec2.chunk.js.map",
+    "runtime-main.js": "/chess-board-setup/static/js/runtime-main.30ff0ed3.js",
+    "runtime-main.js.map": "/chess-board-setup/static/js/runtime-main.30ff0ed3.js.map",
+    "static/js/2.2be5dcc2.chunk.js": "/chess-board-setup/static/js/2.2be5dcc2.chunk.js",
+    "static/js/2.2be5dcc2.chunk.js.map": "/chess-board-setup/static/js/2.2be5dcc2.chunk.js.map",
+    "static/js/3.87d08480.chunk.js": "/chess-board-setup/static/js/3.87d08480.chunk.js",
+    "48f3f13cf58f45cada29.module.wasm": "/chess-board-setup/48f3f13cf58f45cada29.module.wasm",
+    "static/js/3.87d08480.chunk.js.map": "/chess-board-setup/static/js/3.87d08480.chunk.js.map",
+    "static/js/4.b0bc22be.chunk.js": "/chess-board-setup/static/js/4.b0bc22be.chunk.js",
+    "static/js/4.b0bc22be.chunk.js.map": "/chess-board-setup/static/js/4.b0bc22be.chunk.js.map",
     "index.html": "/chess-board-setup/index.html",
     "static/css/main.ca96e840.chunk.css.map": "/chess-board-setup/static/css/main.ca96e840.chunk.css.map",
-    "static/js/2.a90919f1.chunk.js.LICENSE.txt": "/chess-board-setup/static/js/2.a90919f1.chunk.js.LICENSE.txt"
+    "static/js/2.2be5dcc2.chunk.js.LICENSE.txt": "/chess-board-setup/static/js/2.2be5dcc2.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.f291bc4a.js",
-    "static/js/2.a90919f1.chunk.js",
+    "static/js/runtime-main.30ff0ed3.js",
+    "static/js/2.2be5dcc2.chunk.js",
     "static/css/main.ca96e840.chunk.css",
-    "static/js/main.d0abd7e4.chunk.js"
+    "static/js/main.338a5ec2.chunk.js"
   ]
 }
