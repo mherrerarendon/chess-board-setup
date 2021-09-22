@@ -1,13 +1,13 @@
 import React from 'react'
 
-const PieceButton = ({ piece_id, handleChange, selected_id }) => {
+const PieceButton = ({ piece_id, set_piece, selected_id }) => {
     return (
         <div className="piece-radio">
             <input
                 type="radio" 
                 id={piece_id}
                 name="piece" 
-                onChange={handleChange} 
+                onChange={(e) => set_piece(e.target.value)} 
                 value={piece_id}
                 checked={selected_id === piece_id}
             />

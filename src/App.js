@@ -5,21 +5,17 @@ import PieceSelection from './components/PieceSelection';
 import ToggleSwitch from './components/lib/ToggleSwitch/ToggleSwitch'
 
 function App() {
-  import('fen').then(module => {
-    console.log(module)
-  })
   const [selected_piece, set_piece] = useState("")
 
   const initial_board_values = Array(64).fill(" ");
   const [board_state, set_board_state] = useState(initial_board_values)
 
   const [white_to_start, set_white_to_start] = useState(true)
-  const [castling_rights, set_castling_rights] = useState(Array(4).fill(true))
+  const [white_king_castle, set_white_king_castle] = useState(true)
+  const [white_queen_castle, set_white_queen_castle] = useState(true)
+  const [black_king_castle, set_black_king_castle] = useState(true)
+  const [black_queen_castle, set_black_queen_castle] = useState(true)
 
-  const handleChange = (e) => {
-    set_piece(e.target.value)
-  }
-  
   const add_piece = (square_id) => {
     const piece_char = selected_piece === "_" ? " " : selected_piece;
     var temp_state = board_state.slice()
@@ -27,25 +23,14 @@ function App() {
     set_board_state(temp_state)
   }
 
-  // const [checked, setChecked] = useState(true);
-  const on_toggle_castle_rights = (castle_id, checked) => {
-    var temp_state = castling_rights.slice()
-    temp_state[castle_id] = checked
-    set_castling_rights(temp_state)
-  }
-
-  async function load_fen() {
-    return import('fen')
-  }
-
   const on_get_fen = () => {
     const editor = {
-      white_to_start: true,
-      white_king_side_castle: true,
-      white_queen_side_castle: true,
-      black_king_side_castle: true,
-      black_queen_side_castle: true,
-      squares: Array(64).fill(' ')
+      white_to_start: white_to_start,
+      white_king_side_castle: white_king_castle,
+      white_queen_side_castle: white_queen_castle,
+      black_king_side_castle: black_king_castle,
+      black_queen_side_castle: black_queen_castle,
+      squares: board_state
     }
     import('fen').then(fen => {
       let fen_str = fen.get_fen_wasm(JSON.stringify(editor))
@@ -62,7 +47,7 @@ function App() {
         />
         <PieceSelection 
           selected_piece={selected_piece}
-          handleChange={handleChange}
+          set_piece={set_piece}
         />
       </div>
       <div className="options-container">
@@ -73,25 +58,25 @@ function App() {
         <div className="castling-rights-container">
           <h2>White Castling Rights</h2>
           <div>
-            <ToggleSwitch id="white-king-castle-rights" checked={white_to_start} onChange={checked => set_white_to_start(checked)} />
+            <ToggleSwitch id="white-king-castle-rights" checked={white_king_castle} onChange={checked => set_white_king_castle(checked)} />
             <label htmlFor="white-king-castle-rights">King side</label>
           </div>
           <br />
           <div>
-            <ToggleSwitch id="white-queen-castle-rights" checked={white_to_start} onChange={checked => set_white_to_start(checked)} />
+            <ToggleSwitch id="white-queen-castle-rights" checked={white_queen_castle} onChange={checked => set_white_queen_castle(checked)} />
             <label htmlFor="white-queen-castle-rights">Queen side</label>
           </div>
         </div>
         <div className="castling-rights-container">
           <h2>Black Castling Rights</h2>
           <div>
-            <ToggleSwitch id="black-king-castle-rights" checked={white_to_start} onChange={checked => set_white_to_start(checked)} />
+            <ToggleSwitch id="black-king-castle-rights" checked={black_king_castle} onChange={checked => set_black_king_castle(checked)} />
             <label htmlFor="black-king-castle-rights">King side</label>
           </div>
           <br />
           <div>
-            <ToggleSwitch id="white-queen-castle-rights" checked={white_to_start} onChange={checked => set_white_to_start(checked)} />
-            <label htmlFor="white-king-queen-rights">Queen side</label>
+            <ToggleSwitch id="black-queen-castle-rights" checked={black_queen_castle} onChange={checked => set_black_queen_castle(checked)} />
+            <label htmlFor="black-queen-castle-rights">Queen side</label>
           </div>
         </div>
         <button onClick={on_get_fen}>test</button>

@@ -1,12 +1,12 @@
 import React from 'react'
 import PieceButton from './PieceButton'
 
-const PieceSelection = ({ selected_piece, handleChange }) => {
+const PieceSelection = ({ selected_piece, set_piece }) => {
     const pieces = [..."_♙♖♘♗♕♔♟♜♞♝♛♚"]
     const piece_components = pieces.map(piece_char => {
         return <PieceButton 
                     piece_id={piece_char}
-                    handleChange={handleChange}
+                    set_piece={set_piece}
                     selected_id={selected_piece}
                     key={piece_char}
                 />
