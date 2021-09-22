@@ -34,6 +34,10 @@ function App() {
     set_castling_rights(temp_state)
   }
 
+  async function load_fen() {
+    return import('fen')
+  }
+
   const on_get_fen = () => {
     const editor = {
       white_to_start: true,
@@ -43,7 +47,10 @@ function App() {
       black_queen_side_castle: true,
       squares: Array(64).fill(' ')
     }
-    wasm.get_fen_wasm(JSON.stringify(editor))
+    import('fen').then(fen => {
+      let fen_str = fen.get_fen_wasm(JSON.stringify(editor))
+      console.log(fen_str)
+    })
   }
 
   return (
@@ -60,30 +67,30 @@ function App() {
       </div>
       <div className="options-container">
         <div>
-          <ToggleSwitch id="starting-color" checked={checked} onChange={checked => on_toggle_castle_rights(checked)} />
+          <ToggleSwitch id="starting-color" checked={white_to_start} onChange={checked => set_white_to_start(checked)} />
           <label htmlFor="starting-color">White to start</label>
         </div>
         <div className="castling-rights-container">
           <h2>White Castling Rights</h2>
           <div>
-            <ToggleSwitch id="white-king-castle-rights" checked={checked} onChange={checked => on_toggle_castle_rights(checked)} />
+            <ToggleSwitch id="white-king-castle-rights" checked={white_to_start} onChange={checked => set_white_to_start(checked)} />
             <label htmlFor="white-king-castle-rights">King side</label>
           </div>
           <br />
           <div>
-            <ToggleSwitch id="white-queen-castle-rights" checked={checked} onChange={checked => on_toggle_castle_rights(checked)} />
+            <ToggleSwitch id="white-queen-castle-rights" checked={white_to_start} onChange={checked => set_white_to_start(checked)} />
             <label htmlFor="white-queen-castle-rights">Queen side</label>
           </div>
         </div>
         <div className="castling-rights-container">
           <h2>Black Castling Rights</h2>
           <div>
-            <ToggleSwitch id="black-king-castle-rights" checked={checked} onChange={checked => on_toggle_castle_rights(checked)} />
+            <ToggleSwitch id="black-king-castle-rights" checked={white_to_start} onChange={checked => set_white_to_start(checked)} />
             <label htmlFor="black-king-castle-rights">King side</label>
           </div>
           <br />
           <div>
-            <ToggleSwitch id="white-queen-castle-rights" checked={checked} onChange={checked => setChecked(checked)} />
+            <ToggleSwitch id="white-queen-castle-rights" checked={white_to_start} onChange={checked => set_white_to_start(checked)} />
             <label htmlFor="white-king-queen-rights">Queen side</label>
           </div>
         </div>
