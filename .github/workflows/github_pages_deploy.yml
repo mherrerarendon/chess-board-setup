@@ -20,7 +20,11 @@ jobs:
     - uses: actions/checkout@v2
     - name: Checkout submodules
       run: git submodule update --init --recursive
-
+    - name: Build Rust Dependencies
+      working-directory: ./rust_deps/fenetic
+      run: |
+        cargo install wasm-pack
+        wasm-pack build
     - name: Install and Build 
       run: |
         npm install
