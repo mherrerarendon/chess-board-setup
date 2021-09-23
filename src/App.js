@@ -15,6 +15,7 @@ function App() {
   const [white_queen_castle, set_white_queen_castle] = useState(true)
   const [black_king_castle, set_black_king_castle] = useState(true)
   const [black_queen_castle, set_black_queen_castle] = useState(true)
+  const [fen, set_fen] = useState("")
 
   const add_piece = (square_id) => {
     const piece_char = selected_piece === "_" ? " " : selected_piece;
@@ -34,7 +35,7 @@ function App() {
     }
     import('fen').then(fen => {
       let fen_str = fen.get_fen_wasm(JSON.stringify(editor))
-      console.log(fen_str)
+      set_fen(fen_str)
     })
   }
 
@@ -79,10 +80,10 @@ function App() {
             <label htmlFor="black-queen-castle-rights">Queen side</label>
           </div>
         </div>
-        <button onClick={on_get_fen}>test</button>
+        <button onClick={on_get_fen}>Get FEN</button>
       </div>
       <div className="fen-container">
-
+        <p>{fen}</p>
       </div>
     </div>
   );
